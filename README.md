@@ -46,14 +46,12 @@ Objectif : Automatiser le tri des déchets en classifiant 19 types de déchets v
 - Utilisation de **Keras** et **TensorFlow** pour développer un modèle de tri automatisé  
 - Résultats : Amélioration de l’efficacité du processus de tri
 
-Optimisation MultiObjectifs
-Projet personnel
-Objectif : Résoudre des problèmes d'optimisation multi-objectifs en utilisant des algorithmes génétiques.
-
-Implémentation d’algorithmes d’optimisation pour résoudre des problèmes complexes où plusieurs objectifs sont en concurrence
-Utilisation des méthodes basées sur des algorithmes génétiques pour explorer les solutions optimales
-Application dans des scénarios où les compromis entre différents objectifs sont cruciaux.
-Accéder au projet
+### **Optimisation Multi-Objectifs**  
+**Projet GitHub**  
+Objectif : Optimiser plusieurs objectifs simultanément à l'aide d'algorithmes d'optimisation multi-objectifs.  
+- Développement et mise en œuvre d'algorithmes pour résoudre des problèmes d'optimisation complexes avec plusieurs objectifs contradictoires  
+- Implémentation des méthodes telles que NSGA-II et d'autres approches modernes  
+- [Lien vers le projet](https://github.com/Ismazerrouk/Optimisation-MultiObjectifs)
 
 ## **Compétences techniques**
 - **Langages** : Python, SQL, R, JAVA
@@ -67,4 +65,5 @@ Accéder au projet
 Spécialisation en Intelligence Artificielle  
 Matières principales : Data Science, Machine Learning, Deep Learning, Big Data, Cloud, Optimisation, Séries temporelles, NLP  
 
-N'hésitez pas à explorer mes projets pour en savoir plus sur mon travail !
+## **Contact**
+Je vous invite à me contacter pour discuter de projets, collaborations ou simplement pour échanger sur la data science. Vous pouvez me retrouver sur [LinkedIn](https://www.linkedin.com/in/ismaël-zerrouk).
