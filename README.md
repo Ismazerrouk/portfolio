@@ -44,12 +44,21 @@ Objectif : Comparer les approches de machine learning et deep learning pour clas
 **Neovision AI**  
 Objectif : Automatiser le tri des déchets en classifiant 19 types de déchets via un réseau de neurones.  
 - Utilisation de **Keras** et **TensorFlow** pour développer un modèle de tri automatisé  
-- Résultats : Amélioration de l’efficacité du processus de tri  
+- Résultats : Amélioration de l’efficacité du processus de tri
+
+Optimisation MultiObjectifs
+Projet personnel
+Objectif : Résoudre des problèmes d'optimisation multi-objectifs en utilisant des algorithmes génétiques.
+
+Implémentation d’algorithmes d’optimisation pour résoudre des problèmes complexes où plusieurs objectifs sont en concurrence
+Utilisation des méthodes basées sur des algorithmes génétiques pour explorer les solutions optimales
+Application dans des scénarios où les compromis entre différents objectifs sont cruciaux.
+Accéder au projet
 
 ## **Compétences techniques**
-- **Langages** : Python, SQL, R  
-- **Outils** : Power BI, Tableau, Jupyter, Databricks  
-- **Frameworks** : TensorFlow, Keras, Scikit-learn, Pandas  
+- **Langages** : Python, SQL, R, JAVA
+- **Outils** : Power BI, Tableau, Jupyter, Azure Synapse  
+- **Frameworks** : Pytorch, TensorFlow, Keras, Scikit-learn, Pandas, SQL alchemy, Matplotlib, Flask, Django
 - **Cloud** : Azure, AWS  
 - **Méthodologies** : Scrum, Agile  
 
