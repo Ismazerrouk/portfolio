@@ -66,4 +66,4 @@ Spécialisation en Intelligence Artificielle
 Matières principales : Data Science, Machine Learning, Deep Learning, Big Data, Cloud, Optimisation, Séries temporelles, NLP  
 
 ## **Contact**
-Je vous invite à me contacter pour discuter de projets, collaborations ou simplement pour échanger sur la data science. Vous pouvez me retrouver sur [LinkedIn](https://www.linkedin.com/in/ismaël-zerrouk).
+Je vous invite à me contacter pour discuter de projets, collaborations ou simplement pour échanger sur la data science. Vous pouvez me retrouver sur [LinkedIn](https://www.linkedin.com/in/ismael-zerrouk/).
