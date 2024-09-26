@@ -38,7 +38,8 @@ Objectif : Développer une application web avec architecture MVC.
 Objectif : Comparer les approches de machine learning et deep learning pour classifier des genres musicaux.  
 - Utilisation des algorithmes de **Random Forest**, **KNN** et de réseaux de neurones convolutifs **(CNN)**  
 - Traitement des données audios sous forme de **spectrogrammes**  
-- Comparaison des performances des modèles en termes de précision et de vitesse d’exécution  
+- Comparaison des performances des modèles en termes de précision et de vitesse d’exécution
+- [Lien vers le projet](https://github.com/Ismazerrouk/ClassificationPython)
 
 ### **Tri de déchets avec un réseau de neurones**  
 **Neovision AI**  
