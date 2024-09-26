@@ -1,4 +1,4 @@
-# Data Scientist**
+# Data Scientist
 
 Bienvenue sur mon GitHub ! Je suis Data Scientist en alternance, spécialisé en mathématiques appliquées et en intelligence artificielle. J’utilise mes compétences pour résoudre des problèmes complexes, en me concentrant sur l’optimisation des processus métier et la gestion des données.
 
