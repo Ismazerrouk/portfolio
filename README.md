@@ -47,6 +47,15 @@ Objectif : Automatiser le tri des déchets en classifiant 19 types de déchets v
 - Utilisation de **Keras** et **TensorFlow** pour développer un modèle de tri automatisé  
 - Résultats : Amélioration de l’efficacité du processus de tri
 
+### **Projet Motus - Application de Jeu Basée sur une Architecture Microservices en Node.js**  
+**Projet école**  
+Objectif : Développement d'une application de jeu Motus basée sur une architecture microservices en Node.js, avec des API communiquant entre elles pour les différents services (authentification, jeu, gestion des scores).
+• Chaque microservice (authentification, Motus et gestion des scores) a été conteneurisé avec Docker, et orchestré via Docker Compose, avec un Dockerfile spécifique pour chaque service.
+• Implémentation des fonctionnalités d'authentification et d'enregistrement des utilisateurs, ainsi que des endpoints API pour le jeu (choix de mot et vérification) et la gestion des scores.
+• Utilisation de bases de données Redis distinctes pour l'authentification et les scores, permettant de stocker les sessions utilisateurs et les résultats du jeu de manière efficace.
+• Les services communiquent entre eux via des appels POST et GET, notamment pour vérifier les mots saisis dans le jeu et enregistrer les scores des utilisateurs, offrant une architecture modulaire et interconnectée.
+• Diagramme Mermaid illustrant le flux de communication entre les microservices : l'utilisateur interagit avec les services via des requêtes HTTP, et les microservices se synchronisent avec Redis pour la gestion des données.
+
 ### **Optimisation Multi-Objectifs**  
 **Projet GitHub**  
 Objectif : Optimiser plusieurs objectifs simultanément à l'aide d'algorithmes d'optimisation multi-objectifs.  
