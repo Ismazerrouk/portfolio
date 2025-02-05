@@ -1,13 +1,28 @@
-# Data Scientist
+# Data Scientist / Machine Learning & Business Intelligence 
 
-Bienvenue sur mon GitHub ! Je suis Data Scientist en alternance, spécialisé en mathématiques appliquées et en intelligence artificielle. J’utilise mes compétences pour résoudre des problèmes complexes, en me concentrant sur l’optimisation des processus métier et la gestion des données.
+Bienvenue sur mon GitHub ! Je suis **Business Data Analyst chez Orange Business**, spécialisé en **data analytics, business intelligence et machine learning**. Mon objectif : **exploiter les données pour optimiser les stratégies marketing B2B, améliorer la fidélisation client et maximiser la valeur business**.
 
-## **À propos de moi**  
-Actuellement en alternance chez **Crédit Agricole Group Infrastructure Platform**, je travaille sur des projets de gestion de données et de prédiction à l'aide de technologies comme Python, Power BI et Prophet. J'ai également une solide expérience dans le traitement du langage naturel (NLP) et le développement d’applications web.
+## **📌 À propos de moi**  
+Actuellement **Business Data Analyst en VIE chez Orange Business**, je travaille au sein de l’équipe **Marketing B2B Customer Value Management (CVM)** à **Bruxelles**. Mon rôle consiste à analyser les données clients, développer des modèles de segmentation et optimiser les stratégies de rétention et de churn.
 
-Diplômé de **CY Tech** en ingénierie mathématique avec une spécialisation en intelligence artificielle, j'ai acquis une expertise en machine learning, deep learning, big data et optimisation.
+J'interviens sur des projets de **segmentation client, churn prediction et reporting avancé**, en exploitant des outils comme **Power BI, Tableau, SQL et Python**. Je collabore étroitement avec les équipes marketing et BI pour transformer les données en insights actionnables et améliorer la valeur client.
 
-## **Projets**
+Diplômé de **CY Tech** en ingénierie mathématique avec une spécialisation en intelligence artificielle, j'ai acquis une expertise en **data analytics, machine learning, business intelligence et optimisation**. Mon parcours inclut également des projets en **traitement du langage naturel (NLP)** et en **développement d’applications web** pour automatiser et optimiser les processus métier.
+
+## 📌 Projets  
+
+### 📢 **Prédiction du churn dans les télécoms**
+**Orange - Projet Personnel**  
+📌 **Objectif :** Comprendre les raisons du churn et développer un modèle prédictif pour identifier les clients à risque.  
+- **Données utilisées :** Jeu de données Telco de Kaggle  
+- **Modèles testés :** **Random Forest, SVM, Logistic Regression, KNN**  
+- **Meilleur modèle :** **Random Forest avec 85 % de précision**  
+- **Facteurs clés du churn :**  
+  - 📊 **Type de contrat** : Les abonnements "mois par mois" sont les plus à risque.  
+  - 💰 **Charges mensuelles élevées** : Les clients ayant des coûts élevés partent plus souvent.  
+  - 🛠️ **Support technique** : Un mauvais service client impacte fortement la fidélité.  
+📎 **[Lien vers le projet](https://github.com/Ismazerrouk/ChurnPrediction)**  
+
 ### **Tableau de bord prédictif pour la gestion des stocks**  
 **Crédit Agricole Group Infrastructure Platform**  
 Objectif : Optimiser la gestion des stocks de postes de travail et intégrer des critères de RSE.  
@@ -39,7 +54,7 @@ Objectif : Comparer les approches de machine learning et deep learning pour clas
 - Utilisation des algorithmes de **Random Forest**, **KNN** et de réseaux de neurones convolutifs **(CNN)**  
 - Traitement des données audios sous forme de **spectrogrammes**  
 - Comparaison des performances des modèles en termes de précision et de vitesse d’exécution
-- [Lien vers le projet](https://github.com/Ismazerrouk/ClassificationPython)
+📎 **[Lien vers le projet](https://github.com/Ismazerrouk/ClassificationPython)**
 
 ### **Tri de déchets avec un réseau de neurones**  
 **Neovision AI**  
@@ -61,7 +76,7 @@ Objectif : Développement d'une application de jeu Motus basée sur une architec
 Objectif : Optimiser plusieurs objectifs simultanément à l'aide d'algorithmes d'optimisation multi-objectifs.  
 - Développement et mise en œuvre d'algorithmes pour résoudre des problèmes d'optimisation complexes avec plusieurs objectifs contradictoires  
 - Implémentation des méthodes telles que NSGA-II et d'autres approches modernes  
-- [Lien vers le projet](https://github.com/Ismazerrouk/Optimisation-MultiObjectifs)
+📎 **[Lien vers le projet](https://github.com/Ismazerrouk/Optimisation-MultiObjectifs)**
 
 ## **Compétences techniques**
 - **Langages** : Python, SQL, R, JAVA
