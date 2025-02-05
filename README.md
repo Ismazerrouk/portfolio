@@ -77,6 +77,8 @@ Objectif : Optimiser plusieurs objectifs simultanément à l'aide d'algorithmes 
 - Développement et mise en œuvre d'algorithmes pour résoudre des problèmes d'optimisation complexes avec plusieurs objectifs contradictoires  
 - Implémentation des méthodes telles que NSGA-II et d'autres approches modernes  
 📎 **[Lien vers le projet](https://github.com/Ismazerrouk/Optimisation-MultiObjectifs)**
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=Ismazerrouk&repo=Optimisation-MultiObjectifs&theme=radical)](https://github.com/Ismazerrouk/Optimisation-MultiObjectifs)
+
 
 ## **Compétences techniques**
 - **Langages** : Python, SQL, R, JAVA
