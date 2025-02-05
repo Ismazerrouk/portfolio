@@ -119,3 +119,31 @@ img {
 #contact a:hover {
     background: #374151;
 }
+
+#trusted-by {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+#trusted-by h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.trusted-by-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.trusted-by-logos img {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.trusted-by-logos img:hover {
+    transform: scale(1.1);
+}
