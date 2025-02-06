@@ -195,3 +195,9 @@ header p {
     max-width: 50px;
     height: auto;
 }
+
+.cta-icon {
+    width: 16px;  /* Réduisez la taille de l'icône */
+    height: 16px; /* Réduisez la taille de l'icône */
+    margin-right: 8px; /* Ajustez l'espace entre l'icône et le texte */
+}
