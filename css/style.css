@@ -1,169 +1,35 @@
-/* 🔷 Réinitialisation et styles globaux */
-* {
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Couleur de fond sombre */
+    color: #e0e0e0; /* Couleur de texte claire */
 }
 
-body {
-    background: #f4f4f4;
-    color: #333;
-    text-align: center;
-}
-
-/* 🏠 Barre de navigation */
-nav {
-    background: #1f2937;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 50px;
-    align-items: center;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-/* 📝 Section À propos */
-.container {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-    color: #1f2937;
-    margin-bottom: 20px;
-}
-
-img {
-    width: 150px;
-    border-radius: 50%;
-    margin-top: 15px;
-}
-
-/* 📌 Projets - Grille */
-.project-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.project-card {
-    background: #fff;
-    padding: 20px;
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-card h3 {
-    margin-bottom: 10px;
-    color: #1f2937;
-}
-
-.project-card p {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.project-card a {
-    text-decoration: none;
-    background: #1f2937;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-}
-
-.project-card a:hover {
-    background: #374151;
-}
-
-/* 📩 Contact */
-#contact a {
-    display: inline-block;
-    margin: 10px;
-    padding: 8px 12px;
-    background: #1f2937;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-#contact a:hover {
-    background: #374151;
-}
-
-#trusted-by {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #f9f9f9;
-}
-
-#trusted-by h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.trusted-by-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-}
-
-.trusted-by-logos img {
-    max-width: 150px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.trusted-by-logos img:hover {
-    transform: scale(1.1);
-}
 header {
+    background: #1f1f1f; /* Couleur de fond sombre pour l'en-tête */
+    color: white;
+    padding: 60px 0;
     text-align: center;
-    padding: 50px 0;
-    background-color: #f9f9f9;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 header h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
-
 .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding: 10px 20px;
     margin: 10px;
-    background-color: #0073b1;
+    background-color: #0073b1; /* Couleur secondaire bleue sobre */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -171,13 +37,122 @@ header h1 {
 }
 
 .cta-button:hover {
-    background-color: #005584;
+    background-color: #005582; /* Couleur secondaire bleue sobre plus foncée */
+}
+
+.cta-icon {
+    width: 16px;  /* Taille réduite de l'icône */
+    height: 16px; /* Taille réduite de l'icône */
+    margin-right: 8px; /* Espace ajusté entre l'icône et le texte */
+}
+
+nav {
+    background: #1f1f1f; /* Couleur de fond sombre pour la navigation */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+nav .nav-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav .nav-links a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#about {
+    background: #1f1f1f; /* Couleur de fond sombre pour la section À propos */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#about h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#about img {
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+#projects {
+    background: #1f1f1f; /* Couleur de fond sombre pour la section Projets */
+    padding: 50px 20px;
+}
+
+#projects h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.project-card {
+    background: #2c2c2c; /* Couleur de fond sombre pour les cartes de projet */
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #e0e0e0; /* Couleur de texte claire */
+}
+
+.project-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #b0b0b0; /* Couleur de texte légèrement plus claire */
+}
+
+.project-card a {
+    text-decoration: none;
+    background: #0073b1; /* Couleur secondaire bleue sobre */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card a:hover {
+    background: #005582; /* Couleur secondaire bleue sobre plus foncée */
 }
 
 #skills {
+    background: #1f1f1f; /* Couleur de fond sombre pour la section Compétences */
+    padding: 50px 20px;
     text-align: center;
-    padding: 50px 0;
-    background-color: #f9f9f9;
 }
 
 .skills-icons {
@@ -190,4 +165,24 @@ header h1 {
 .skills-icons img {
     max-width: 50px;
     height: auto;
+}
+
+#contact {
+    background: #1f1f1f; /* Couleur de fond sombre pour la section Contact */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#contact a.cta-button {
+    margin: 0 10px;
 }
