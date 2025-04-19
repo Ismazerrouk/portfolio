@@ -382,8 +382,9 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 
 .skill-item img {
-    max-width: 100%;
-    height: auto;
+    width: 60px; /* ou 80px selon le rendu souhaité */
+    height: 60px;
+    object-fit: contain;
     filter: grayscale(100%); /* Effet noir et blanc */
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
