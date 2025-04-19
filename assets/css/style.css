@@ -457,6 +457,27 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 
 /*-------------------------------------
+        6.  Entreprises
+--------------------------------------*/
+.entreprises {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.entreprises-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Espacement entre les icônes */
+    margin-top: 30px;
+}
+
+
+
+
+
+/*-------------------------------------
         7. Experience
 -------------------------------------*/
 .experience {
