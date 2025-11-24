@@ -791,6 +791,12 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     border: 1px solid #9f00ff;
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
 }
+.form-status {
+    margin-top: 12px;
+    color: #43485c;
+    font-size: 13px;
+    min-height: 18px;
+}
 
 /*--contct button--*/
 

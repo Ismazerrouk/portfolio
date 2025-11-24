@@ -173,7 +173,7 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="experience-time text-right">
-                                        <h2>Jan. 2025 - Présent</h2>
+                                        <h2>Sept. 2024 - Présent</h2>
                                         <h3>Business Data Analyst</h3>
                                     </div>
                                 </div>
@@ -186,7 +186,7 @@
                                             </h4>
                                             <h5>Bruxelles, Belgique</h5>
                                             <p class="description">
-                                                Analyse des données marketing B2B, segmentation client, reporting et modélisation de la rétention et du churn avec Power BI, Tableau et Python.
+                                                Analyse des données marketing B2B, segmentation client, reporting et modélisation de la rétention et du churn avec Power BI, Tableau, SQL et Python.
                                             </p>
                                         </div>
                                     </div>
@@ -506,7 +506,11 @@
 						<div class="col-md-offset-1 col-md-5 col-sm-6">
 							<div class="single-contact-box">
 								<div class="contact-form">
-									<form action="https://formspree.io/f/mnnpngnr" method="POST">
+									<form id="contact-form" action="https://formsubmit.co/ismael.zerroukpro@gmail.com" method="POST">
+										<input type="hidden" name="_subject" value="Nouveau message via le portfolio">
+										<input type="hidden" name="_captcha" value="false">
+										<input type="hidden" name="_template" value="table">
+										<input type="text" name="_honey" style="display:none">
 										<div class="row">
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
@@ -538,6 +542,7 @@
 												<div class="single-contact-btn">
 													<button type="submit" class="contact-btn">Submit</button>
 												</div>
+												<p class="form-status" aria-live="polite"></p>
 											</div>
 										</div>
 									</form><!--/form-->
@@ -631,6 +636,33 @@
         
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
+		<script>
+			(function() {
+				var form = document.getElementById('contact-form');
+				if (!form) return;
+				var status = form.querySelector('.form-status');
+				form.addEventListener('submit', function(event) {
+					event.preventDefault();
+					if (status) status.textContent = 'Envoi en cours...';
+					var data = new FormData(form);
+					var ajaxAction = form.action.includes('/ajax/') ? form.action : form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+					fetch(ajaxAction, {
+						method: 'POST',
+						headers: { 'Accept': 'application/json' },
+						body: data
+					}).then(function(response) {
+						if (!response.ok) {
+							throw new Error('bad-response');
+						}
+						form.reset();
+						if (status) status.textContent = 'Merci ! Votre message a bien été envoyé.';
+					}).catch(function(error) {
+						if (status) status.textContent = 'Envoi impossible pour le moment. Contactez-moi directement : ismael.zerroukpro@gmail.com';
+						console.error('Form submission error:', error);
+					});
+				});
+			})();
+		</script>
         
     </body>
 	
