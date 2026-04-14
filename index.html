@@ -37,6 +37,12 @@
 <body>
     <a class="skip-link" href="#main">Aller au contenu</a>
 
+    <!-- Decorative starfield -->
+    <div class="stars" aria-hidden="true"></div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- Header / Nav -->
     <header class="site-header" id="site-header">
         <div class="container nav-wrap">
@@ -77,7 +83,7 @@
                     Bonjour, je suis<br>
                     <span class="gradient-text">Ismaël Zerrouk</span>
                 </h1>
-                <p class="hero-subtitle"><span class="prompt">&gt;</span> Data Scientist &amp; Business Analyst</p>
+                <p class="hero-subtitle"><span class="prompt">&gt;</span> <span class="typewriter" data-words='["Data Scientist","Business Analyst","ML Engineer","BI Developer"]'>Data Scientist</span></p>
                 <p class="hero-desc">
                     Je transforme des données complexes en insights actionnables, via du machine learning, du reporting BI et de l'analyse marketing B2B.
                 </p>
@@ -135,7 +141,7 @@
                 <ol class="timeline">
                     <li class="timeline-item">
                         <span class="timeline-marker" aria-hidden="true"></span>
-                        <article class="timeline-card">
+                        <article class="timeline-card spotlight">
                             <div class="timeline-meta">
                                 <span class="timeline-date">Sept. 2024 — Présent</span>
                                 <span class="timeline-loc">Bruxelles, Belgique</span>
@@ -150,7 +156,7 @@
                     </li>
                     <li class="timeline-item">
                         <span class="timeline-marker" aria-hidden="true"></span>
-                        <article class="timeline-card">
+                        <article class="timeline-card spotlight">
                             <div class="timeline-meta">
                                 <span class="timeline-date">Sept. 2023 — Sept. 2024</span>
                                 <span class="timeline-loc">France</span>
@@ -165,7 +171,7 @@
                     </li>
                     <li class="timeline-item">
                         <span class="timeline-marker" aria-hidden="true"></span>
-                        <article class="timeline-card">
+                        <article class="timeline-card spotlight">
                             <div class="timeline-meta">
                                 <span class="timeline-date">Avril 2023 — Août 2023</span>
                                 <span class="timeline-loc">Indonésie</span>
@@ -190,19 +196,19 @@
                     <h2 class="section-title">Parcours académique</h2>
                 </header>
                 <div class="education-grid">
-                    <article class="edu-card">
+                    <article class="edu-card spotlight">
                         <p class="edu-date">2021 — 2024</p>
                         <h3>Diplôme d'Ingénieur</h3>
                         <p class="edu-school">CY Tech — Mathématiques appliquées</p>
                         <p class="edu-desc">Spécialisation IA : Data Science, Machine Learning, Deep Learning, Big Data, Cloud, NLP, Microservices, POO.</p>
                     </article>
-                    <article class="edu-card">
+                    <article class="edu-card spotlight">
                         <p class="edu-date">2019 — 2021</p>
                         <h3>Prépa intégrée</h3>
                         <p class="edu-school">CY Tech — Cycle préparatoire</p>
                         <p class="edu-desc">Formation intensive en mathématiques, informatique et sciences de l'ingénieur.</p>
                     </article>
-                    <article class="edu-card">
+                    <article class="edu-card spotlight">
                         <p class="edu-date">2016 — 2019</p>
                         <h3>Baccalauréat Scientifique</h3>
                         <p class="edu-school">Lycée Jules Verne</p>
@@ -220,25 +226,25 @@
                     <h2 class="section-title">Compétences</h2>
                 </header>
                 <div class="skills-grid">
-                    <div class="skill-group">
+                    <div class="skill-group spotlight">
                         <h3>Langages</h3>
                         <ul class="chip-list">
                             <li>Python</li><li>SQL</li><li>R</li><li>Java</li>
                         </ul>
                     </div>
-                    <div class="skill-group">
+                    <div class="skill-group spotlight">
                         <h3>Data &amp; ML</h3>
                         <ul class="chip-list">
                             <li>Pandas</li><li>Scikit-learn</li><li>TensorFlow</li><li>PyTorch</li><li>Keras</li><li>Spacy</li>
                         </ul>
                     </div>
-                    <div class="skill-group">
+                    <div class="skill-group spotlight">
                         <h3>BI &amp; Visualisation</h3>
                         <ul class="chip-list">
                             <li>Power BI</li><li>Tableau</li><li>Matplotlib</li><li>Streamlit</li>
                         </ul>
                     </div>
-                    <div class="skill-group">
+                    <div class="skill-group spotlight">
                         <h3>Cloud &amp; Outils</h3>
                         <ul class="chip-list">
                             <li>Azure</li><li>AWS</li><li>Docker</li><li>Git</li><li>Jupyter</li>
@@ -256,7 +262,7 @@
                     <h2 class="section-title">Projets récents</h2>
                 </header>
                 <div class="projects-grid">
-                    <article class="project-card">
+                    <article class="project-card spotlight">
                         <div class="project-img">
                             <img src="assets/images/portfolio/comments.png" alt="Aperçu du projet ToxiBERT" loading="lazy">
                         </div>
@@ -273,7 +279,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card spotlight">
                         <div class="project-img">
                             <img src="assets/images/portfolio/screenshotDashboard.png" alt="Dashboard de prédiction de churn Telco" loading="lazy">
                         </div>
@@ -290,7 +296,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card spotlight">
                         <div class="project-img">
                             <img src="assets/images/portfolio/cloud-fog.png" alt="Schéma d'optimisation Cloud/Fog" loading="lazy">
                         </div>
@@ -307,7 +313,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card spotlight">
                         <div class="project-img">
                             <img src="assets/images/portfolio/MicroservicesMotus.png" alt="Architecture microservices du projet Motus" loading="lazy">
                         </div>
@@ -324,7 +330,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card spotlight">
                         <div class="project-img">
                             <img src="assets/images/portfolio/Marketing_B2B_Architecture.png" alt="Architecture data marketing B2B" loading="lazy">
                         </div>
@@ -337,7 +343,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card spotlight">
                         <div class="project-img">
                             <img src="assets/images/portfolio/the-blowup-t06aN6vewaQ-unsplash.jpg" alt="Classification de déchets par CNN" loading="lazy">
                         </div>

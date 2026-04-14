@@ -116,7 +116,111 @@
         });
     }
 
-    // ---------- 5. Contact form — AJAX submission ----------
+    // ---------- 5. Scroll progress bar ----------
+    var progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+        var updateProgress = function () {
+            var scroll = window.scrollY || window.pageYOffset;
+            var height = document.documentElement.scrollHeight - window.innerHeight;
+            var ratio = height > 0 ? scroll / height : 0;
+            progressBar.style.transform = 'scaleX(' + ratio.toFixed(4) + ')';
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress);
+        updateProgress();
+    }
+
+    // ---------- 6. Typewriter effect ----------
+    var typewriters = document.querySelectorAll('.typewriter');
+    if (!prefersReducedMotion && typewriters.length) {
+        typewriters.forEach(function (el) {
+            var words;
+            try {
+                words = JSON.parse(el.getAttribute('data-words') || '[]');
+            } catch (e) {
+                words = [];
+            }
+            if (!words.length) return;
+
+            var wordIndex = 0;
+            var charIndex = 0;
+            var deleting = false;
+            el.textContent = '';
+
+            var tick = function () {
+                var current = words[wordIndex];
+                if (!deleting) {
+                    el.textContent = current.slice(0, ++charIndex);
+                    if (charIndex === current.length) {
+                        deleting = true;
+                        setTimeout(tick, 1800);
+                        return;
+                    }
+                } else {
+                    el.textContent = current.slice(0, --charIndex);
+                    if (charIndex === 0) {
+                        deleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                    }
+                }
+                setTimeout(tick, deleting ? 45 : 90);
+            };
+
+            setTimeout(tick, 900);
+        });
+    }
+
+    // ---------- 7. Spotlight cursor-follow ----------
+    var spotlightEls = document.querySelectorAll('.spotlight');
+    if (spotlightEls.length && window.matchMedia('(hover: hover)').matches) {
+        spotlightEls.forEach(function (el) {
+            el.addEventListener('pointermove', function (event) {
+                var rect = el.getBoundingClientRect();
+                var x = ((event.clientX - rect.left) / rect.width) * 100;
+                var y = ((event.clientY - rect.top) / rect.height) * 100;
+                el.style.setProperty('--mx', x + '%');
+                el.style.setProperty('--my', y + '%');
+            });
+        });
+    }
+
+    // ---------- 8. Hero blob parallax (mouse) ----------
+    var heroBlobs = document.querySelectorAll('.hero .blob');
+    if (heroBlobs.length && !prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
+        var hero = document.getElementById('hero');
+        if (hero) {
+            hero.addEventListener('pointermove', function (event) {
+                var rect = hero.getBoundingClientRect();
+                var cx = (event.clientX - rect.left) / rect.width - 0.5;
+                var cy = (event.clientY - rect.top) / rect.height - 0.5;
+                heroBlobs.forEach(function (blob, i) {
+                    var factor = i === 0 ? 50 : -50;
+                    blob.style.transform = 'translate(' + (cx * factor) + 'px, ' + (cy * factor) + 'px)';
+                });
+            });
+            hero.addEventListener('pointerleave', function () {
+                heroBlobs.forEach(function (blob) {
+                    blob.style.transform = '';
+                });
+            });
+        }
+    }
+
+    // ---------- 9. Stagger --i for reveals within grids ----------
+    var staggerContainers = [
+        '.projects-grid .project-card',
+        '.education-grid .edu-card',
+        '.skills-grid .skill-group',
+        '.logos-grid .logo-card',
+        '.timeline .timeline-item'
+    ];
+    staggerContainers.forEach(function (selector) {
+        document.querySelectorAll(selector).forEach(function (el, i) {
+            el.style.setProperty('--i', i);
+        });
+    });
+
+    // ---------- 10. Contact form — AJAX submission ----------
     var form = document.getElementById('contact-form');
 
     if (form) {
