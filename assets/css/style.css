@@ -1258,12 +1258,22 @@ ol {
 }
 
 /* ---------- Typewriter cursor ---------- */
-.typewriter::after {
-    content: "▊";
+.typewriter {
     display: inline-block;
-    margin-left: 2px;
     color: var(--cyan);
-    animation: blink 1.05s step-end infinite;
+    min-height: 1em;
+}
+
+.typewriter::after {
+    content: "";
+    display: inline-block;
+    width: 0.6ch;
+    height: 1.05em;
+    margin-left: 3px;
+    vertical-align: text-bottom;
+    background: var(--cyan);
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.7);
+    animation: blink 1.05s steps(2, start) infinite;
 }
 
 @keyframes blink {

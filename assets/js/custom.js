@@ -132,43 +132,61 @@
 
     // ---------- 6. Typewriter effect ----------
     var typewriters = document.querySelectorAll('.typewriter');
-    if (!prefersReducedMotion && typewriters.length) {
-        typewriters.forEach(function (el) {
-            var words;
+    typewriters.forEach(function (el) {
+        var raw = el.getAttribute('data-words');
+        var words = [];
+        if (raw) {
             try {
-                words = JSON.parse(el.getAttribute('data-words') || '[]');
+                words = JSON.parse(raw);
             } catch (e) {
-                words = [];
+                // Fallback: comma-separated values
+                words = raw.replace(/^\s*\[|\]\s*$/g, '').split(',').map(function (s) {
+                    return s.trim().replace(/^["']+|["']+$/g, '');
+                }).filter(Boolean);
             }
-            if (!words.length) return;
+        }
+        if (!Array.isArray(words) || !words.length) return;
 
-            var wordIndex = 0;
-            var charIndex = 0;
-            var deleting = false;
-            el.textContent = '';
+        // Reduced motion: cycle words without typing
+        if (prefersReducedMotion) {
+            var idx = 0;
+            el.textContent = words[0];
+            setInterval(function () {
+                idx = (idx + 1) % words.length;
+                el.textContent = words[idx];
+            }, 3200);
+            return;
+        }
 
-            var tick = function () {
-                var current = words[wordIndex];
-                if (!deleting) {
-                    el.textContent = current.slice(0, ++charIndex);
-                    if (charIndex === current.length) {
-                        deleting = true;
-                        setTimeout(tick, 1800);
-                        return;
-                    }
-                } else {
-                    el.textContent = current.slice(0, --charIndex);
-                    if (charIndex === 0) {
-                        deleting = false;
-                        wordIndex = (wordIndex + 1) % words.length;
-                    }
+        // Typing loop
+        var wordIndex = 0;
+        var charIndex = 0;
+        var deleting = false;
+        el.textContent = '';
+
+        var tick = function () {
+            var current = words[wordIndex];
+            if (!deleting) {
+                charIndex++;
+                el.textContent = current.slice(0, charIndex);
+                if (charIndex === current.length) {
+                    deleting = true;
+                    setTimeout(tick, 1800);
+                    return;
                 }
-                setTimeout(tick, deleting ? 45 : 90);
-            };
+            } else {
+                charIndex--;
+                el.textContent = current.slice(0, charIndex);
+                if (charIndex === 0) {
+                    deleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+            }
+            setTimeout(tick, deleting ? 45 : 95);
+        };
 
-            setTimeout(tick, 900);
-        });
-    }
+        setTimeout(tick, 700);
+    });
 
     // ---------- 7. Spotlight cursor-follow ----------
     var spotlightEls = document.querySelectorAll('.spotlight');
