@@ -1,127 +1,161 @@
-$(document).ready(function(){
-	"use strict";
-    
-        /*==================================
-* Author        : "ThemeSine"
-* Template Name : Khanas HTML Template
-* Version       : 1.0
-==================================== */
+/* ==========================================================================
+   Portfolio — Vanilla JS (no dependencies)
+   1. Nav: scroll state, mobile toggle, active link tracking
+   2. Scroll to top
+   3. Reveal on scroll (IntersectionObserver)
+   4. Contact form — AJAX submission via FormSubmit
+   ========================================================================== */
 
+(function () {
+    'use strict';
 
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/*=========== TABLE OF CONTENTS ===========
-1. Scroll To Top 
-2. Smooth Scroll spy
-3. Progress-bar
-4. owl carousel
-5. welcome animation support
-======================================*/
+    // ---------- 1. Header scroll + scroll-top button ----------
+    var header = document.getElementById('site-header');
+    var scrollTopBtn = document.getElementById('scroll-top');
 
-    // 1. Scroll To Top 
-		$(window).on('scroll',function () {
-			if ($(this).scrollTop() > 600) {
-				$('.return-to-top').fadeIn();
-			} else {
-				$('.return-to-top').fadeOut();
-			}
-		});
-		$('.return-to-top').on('click',function(){
-				$('html, body').animate({
-				scrollTop: 0
-			}, 1500);
-			return false;
-		});
-	
-	
-	
-	// 2. Smooth Scroll spy
-		
-		$('.header-area').sticky({
-           topSpacing:0
+    function onScroll() {
+        var y = window.scrollY || window.pageYOffset;
+        if (header) {
+            header.classList.toggle('scrolled', y > 12);
+        }
+        if (scrollTopBtn) {
+            scrollTopBtn.classList.toggle('visible', y > 600);
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
         });
-		
-		//=============
+    }
 
-		$('li.smooth-menu a').bind("click", function(event) {
-			event.preventDefault();
-			var anchor = $(this);
-			$('html, body').stop().animate({
-				scrollTop: $(anchor.attr('href')).offset().top - 0
-			}, 1200,'easeInOutExpo');
-		});
-		
-		$('body').scrollspy({
-			target:'.navbar-collapse',
-			offset:0
-		});
+    // ---------- 2. Mobile nav toggle ----------
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('primary-nav');
 
-	// 3. Progress-bar
-	
-		var dataToggleTooTip = $('[data-toggle="tooltip"]');
-		var progressBar = $(".progress-bar");
-		if (progressBar.length) {
-			progressBar.appear(function () {
-				dataToggleTooTip.tooltip({
-					trigger: 'manual'
-				}).tooltip('show');
-				progressBar.each(function () {
-					var each_bar_width = $(this).attr('aria-valuenow');
-					$(this).width(each_bar_width + '%');
-				});
-			});
-		}
-	
-	// 4. owl carousel
-	
-		// i. client (carousel)
-		
-			$('#client').owlCarousel({
-				items:7,
-				loop:true,
-				smartSpeed: 1000,
-				autoplay:true,
-				dots:false,
-				autoplayHoverPause:true,
-				responsive:{
-						0:{
-							items:2
-						},
-						415:{
-							items:2
-						},
-						600:{
-							items:4
-
-						},
-						1199:{
-							items:4
-						},
-						1200:{
-							items:7
-						}
-					}
-				});
-				
-				
-				$('.play').on('click',function(){
-					owl.trigger('play.owl.autoplay',[1000])
-				})
-				$('.stop').on('click',function(){
-					owl.trigger('stop.owl.autoplay')
-				})
-
-
-    // 5. welcome animation support
-
-        $(window).load(function(){
-        	$(".header-text h2,.header-text p").removeClass("animated fadeInUp").css({'opacity':'0'});
-            $(".header-text a").removeClass("animated fadeInDown").css({'opacity':'0'});
+    if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+            var isOpen = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
         });
 
-        $(window).load(function(){
-        	$(".header-text h2,.header-text p").addClass("animated fadeInUp").css({'opacity':'0'});
-            $(".header-text a").addClass("animated fadeInDown").css({'opacity':'0'});
+        // Close menu when a link is tapped
+        nav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Ouvrir le menu');
+            });
         });
 
-});	
-	
+        // Close on Escape
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.focus();
+            }
+        });
+    }
+
+    // ---------- 3. Active nav link tracking ----------
+    var sections = document.querySelectorAll('main section[id]');
+    var navLinks = document.querySelectorAll('.primary-nav a');
+
+    if ('IntersectionObserver' in window && sections.length && navLinks.length) {
+        var navObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var id = entry.target.id;
+                    navLinks.forEach(function (link) {
+                        var target = link.getAttribute('href');
+                        link.classList.toggle('active', target === '#' + id);
+                    });
+                }
+            });
+        }, {
+            rootMargin: '-40% 0px -55% 0px',
+            threshold: 0
+        });
+
+        sections.forEach(function (section) {
+            navObserver.observe(section);
+        });
+    }
+
+    // ---------- 4. Reveal on scroll ----------
+    if ('IntersectionObserver' in window && !prefersReducedMotion) {
+        var revealables = document.querySelectorAll(
+            '.section-head, .about-grid, .timeline-item, .edu-card, .skill-group, .project-card, .logo-card, .contact-grid'
+        );
+
+        revealables.forEach(function (el) {
+            el.classList.add('reveal');
+        });
+
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealables.forEach(function (el) {
+            revealObserver.observe(el);
+        });
+    }
+
+    // ---------- 5. Contact form — AJAX submission ----------
+    var form = document.getElementById('contact-form');
+
+    if (form) {
+        var status = form.querySelector('.form-status');
+        var submitBtn = form.querySelector('button[type="submit"]');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            if (status) status.textContent = 'Envoi en cours…';
+            if (submitBtn) submitBtn.disabled = true;
+
+            var data = new FormData(form);
+            var action = form.action.indexOf('/ajax/') !== -1
+                ? form.action
+                : form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+
+            fetch(action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: data
+            })
+                .then(function (response) {
+                    if (!response.ok) throw new Error('bad-response');
+                    return response.json().catch(function () { return {}; });
+                })
+                .then(function () {
+                    form.reset();
+                    if (status) status.textContent = 'Merci ! Votre message a bien été envoyé.';
+                })
+                .catch(function (error) {
+                    if (status) {
+                        status.textContent = 'Envoi impossible pour le moment. Contactez-moi directement : ismael.zerroukpro@gmail.com';
+                    }
+                    console.error('Form submission error:', error);
+                })
+                .finally(function () {
+                    if (submitBtn) submitBtn.disabled = false;
+                });
+        });
+    }
+})();
